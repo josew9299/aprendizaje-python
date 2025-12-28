@@ -1,10 +1,12 @@
 import time
+
 def semaforo(semaforo):
 
     tl_1 = ("RED","YELLOW","GREEN")
     tl_2 = ("RED","YELLOW","GREEN")
     tl_3 = ("RED","YELLOW","GREEN")
     tl_4 = ("RED","YELLOW","GREEN")
+    
     #Posición inicial
     "1 y 3 inician en verde"
     "2 y 4 inician en rojo"
@@ -13,11 +15,11 @@ def semaforo(semaforo):
     print(tl_3[2])
     print(tl_4[0])
     time.sleep(7)
-
+    
     print("")
     print("")
     print("")
-    print("")
+    
     "1 y 3 pasan a amarillo"
     "2 y 4 permanecen en rojo"
     print(tl_1[1])
@@ -29,7 +31,7 @@ def semaforo(semaforo):
     print("")
     print("")
     print("")
-    print("")
+
 
     "1 y 3 pasan a rojo"
     "2 y 4 pasan a amarillo"
@@ -40,7 +42,6 @@ def semaforo(semaforo):
     print(tl_4[1])
     time.sleep(10)
 
-    print("")
     print("")
     print("")
     print("")
@@ -63,7 +64,6 @@ def semaforo(semaforo):
     print("")
     print("")
     print("")
-    print("")
 
     print(tl_1[0])
     print(tl_2[1])
@@ -71,6 +71,10 @@ def semaforo(semaforo):
     print(tl_4[1])
     time.sleep(5)
 
+    print("")
+    print("")
+    print("")
+    
 semaforo(semaforo)
 
 while True:
