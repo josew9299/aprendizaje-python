@@ -9,7 +9,7 @@ print("Este archivo está en la carpeta 00_FUNDAMENTOS")
 # Bonus: Prueba este código en otro archivo (ej: 00_FUNDAMENTOS/fecha.py)
 
 print(f"¡Hoy es {datetime.now().strftime('%d/%m/%Y')} y Git funciona!")
-
+""""""
 x = 0
 while x <= 200:
     if x == 150:
