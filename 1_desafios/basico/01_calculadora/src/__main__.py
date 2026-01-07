@@ -1,56 +1,47 @@
 """
-Módulo principal de la calculadora
+Módulo principal de la calculadora.
+Solo contiene el flujo de control del programa.
 """
 
 from src import interfaz
 from src import logica
 
-def main():
-    """Función principal de la calculadora."""
-    # Mostrar bienvenida
-    interfaz.mostrar_bienevenida_1()
+
+def ejecutar_calculadora():
+    """Función principal que coordina el flujo de la calculadora."""
+    interfaz.mostrar_bienvenida()
     
     while True:
-        print("\n" + "-"*50)
+        # Obtener operación
+        operacion = interfaz.obtener_operacion()
         
-        # Pedir operación UNA SOLA VEZ
-        operacion = interfaz.operacion()
-        
-        # Opción para salir (agregar esto a interfaz.operacion())
-        if operacion == "0" or operacion.lower() == "salir":
-            print("\n👋 ¡Hasta luego!")
+        # Salir si el usuario elige '0'
+        if operacion == "0":
+            interfaz.mostrar_despedida()
             break
-        # Pedir números y GUARDAR los valores
-        n1 = interfaz.pedir_primer_numero()
-        n2 = interfaz.pedir_segundo_numero()
         
-        interfaz.pedir_segundo_numero()
-        # Ejecutar operación y GUARDAR resultado
-        resultado = None
+        # Obtener números
+        num1 = interfaz.obtener_numero("Ingrese el primer número: ")
+        num2 = interfaz.obtener_numero("Ingrese el segundo número: ")
         
-        if operacion == "+":
-            resultado = logica.sum_two(n1, n2)  # Nota: corrijo el nombre
-        elif operacion == "-":
-            resultado = logica.subs_two(n1, n2)
-        elif operacion == "*":
-            resultado = logica.multiply_two(n1, n2)
-        elif operacion == "/":
-            if n2 == 0:
-                print("❌ Error: No se puede dividir por cero")
-                continue
-            resultado = logica.divide_two(n1, n2)  # Si tienes esta función
-        elif operacion == "**":
-            resultado = logica.power(n1, n2)
-        else:
-            print("❌ Operación no válida")
-            continue
-        
-        # MOSTRAR el resultado al usuario
-        if resultado is not None:
-            print("\n" + "=" * 50)
-            print(f"   Resultado: {n1} {operacion} {n2} = {resultado}")
-            print("=" * 50)
+        try:
+            # Ejecutar cálculo
+            resultado = logica.calcular(operacion, num1, num2)
+            
+            # Mostrar resultado
+            interfaz.mostrar_resultado(num1, operacion, num2, resultado)
+            
+        except ZeroDivisionError as e:
+            print(f"\n❌ Error matemático: {e}")
+            print("   Por favor, intente con otros números.")
+            
+        except ValueError as e:
+            print(f"\n❌ Error: {e}")
+            
+        except Exception as e:
+            print(f"\n⚠️  Error inesperado: {e}")
+            print("   Por favor, intente nuevamente.")
 
 
 if __name__ == "__main__":
-    main()
+    ejecutar_calculadora()

@@ -1,31 +1,66 @@
-"""Esta es una calculadora básica con los bucles for y while
-#Problemas
-#1. Necesito dos entradas
-#2. Hacer la operación matemática y evaluarala.
-#3. Que contenga las 4 operaciones matemáticas básicas
-#4. Mostrar el resultado.
-#5. Que no se cierre hasta darle la orden de salir
+"""
+Módulo de lógica matemática para la calculadora.
+Contiene todas las operaciones y validaciones matemáticas.
 """
 
-#Operaciones
-def sum_two(n1,n2):
-    #"""Suma dos números tipo float"""
-    return n1+n2
 
-def multiply_two(n1,n2):
-    #"""Multiplica dos números tipo float""" 
-    return n1*n2
+def sumar(a, b):
+    """Retorna la suma de dos números."""
+    return a + b
 
-def divide_two(n1,n2):
-    #"""Divide dos números tipo float""" 
-    return n1/n2
 
-def subs_two(n1,n2):
-    #"""Resta un valor  del otro, siendo ambos de tipo float"""
-    return n1-n2
+def restar(a, b):
+    """Retorna la resta de dos números (a - b)."""
+    return a - b
 
-def power(n1,n2):
-    #"""Calcula la potencia de un número"""
-    return n1**n2
 
-#Módulo inicial funcionando correctamente
+def multiplicar(a, b):
+    """Retorna el producto de dos números."""
+    return a * b
+
+
+def dividir(a, b):
+    """
+    Retorna la división de a entre b.
+    
+    Raises:
+        ZeroDivisionError: Si b es 0
+    """
+    if b == 0:
+        raise ZeroDivisionError("No se puede dividir entre cero")
+    return a / b
+
+
+def potenciar(base, exponente):
+    """Retorna la base elevada al exponente."""
+    return base ** exponente
+
+
+def calcular(operacion, num1, num2):
+    """
+    Ejecuta la operación solicitada con validación completa.
+    
+    Args:
+        operacion: Símbolo de la operación (+, -, *, /, **)
+        num1: Primer operando
+        num2: Segundo operando
+    
+    Returns:
+        float: Resultado de la operación
+    
+    Raises:
+        ValueError: Si la operación no es válida
+        ZeroDivisionError: En división entre cero
+    """
+    if operacion == "+":
+        return sumar(num1, num2)
+    elif operacion == "-":
+        return restar(num1, num2)
+    elif operacion == "*":
+        return multiplicar(num1, num2)
+    elif operacion == "/":
+        return dividir(num1, num2)
+    elif operacion == "**":
+        return potenciar(num1, num2)
+    else:
+        raise ValueError(f"Operación no válida: {operacion}")
