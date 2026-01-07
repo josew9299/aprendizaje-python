@@ -9,7 +9,7 @@ def pedir_primer_numero():
             n1 = float(input("Ingresa el primer número: "))
             return n1
             
-        except:
+        except ValueError:
             print("❌ Ingresa un número: ")
             
 def pedir_segundo_numero():
@@ -17,7 +17,7 @@ def pedir_segundo_numero():
         try:
             n2 = float(input("Ingresa el segundo número: "))
             return n2
-        except Exception as e:
+        except ValueError as e:
             print("❌ Ingresa un número+: ",{e})
             
 #Módulo inicial funcionando correctamente

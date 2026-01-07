@@ -1,4 +1,6 @@
 from ejercicios_basicos import mayor_edad
+
+
 ver = int(input("Cuantos años tienes?: "))
 
 mayor_edad(ver)

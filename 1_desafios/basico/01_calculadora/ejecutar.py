@@ -19,7 +19,7 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         print("\n\n👋 Programa interrumpido. ¡Hasta luego!")
-    except Exception as e:
+    except TypeError as e:
         print(f"\n❌ Error inesperado: {e}")
         import traceback
         traceback.print_exc()
