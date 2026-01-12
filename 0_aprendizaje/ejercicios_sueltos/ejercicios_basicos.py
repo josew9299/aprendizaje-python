@@ -11,3 +11,6 @@ def mayor_edad(edad):
         return False, "Por favor introduce una edad válida"
     
 print(mayor_edad(int(input("Cual es tu edad?: "))))
+
+
+#La serie de fibonacci

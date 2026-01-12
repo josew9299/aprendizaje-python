@@ -1,6 +1,6 @@
 import time
 
-def semaforo(semaforo):
+def semaforo():
 
     tl_1 = ("RED","YELLOW","GREEN")
     tl_2 = ("RED","YELLOW","GREEN")
@@ -75,7 +75,7 @@ def semaforo(semaforo):
     print("")
     print("")
     
-semaforo(semaforo)
+semaforo()
 
 while True:
-    semaforo(semaforo)
+    semaforo()

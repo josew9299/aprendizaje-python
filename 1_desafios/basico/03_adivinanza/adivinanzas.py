@@ -37,6 +37,7 @@ def jugar_adivinanza():
         except ValueError:
             print("Por favor, ingresa un número válido.")
             intentos -= 1  # No contar intentos inválidos
+            
 
 # Bucle principal para jugar de nuevo
 while True:
