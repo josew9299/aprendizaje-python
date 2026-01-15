@@ -10,7 +10,21 @@ def mayor_edad(edad):
     else:
         return False, "Por favor introduce una edad válida"
     
-print(mayor_edad(int(input("Cual es tu edad?: "))))
 
 
 #La serie de fibonacci
+
+
+""""
+Imprime este patrón por pantalla
+1
+2 2
+3 3 3 
+4 4 4 4
+5 5 5 5 5
+"""
+
+for num in range(6):#Filas
+    for i in range(num): #Columnas
+        print(num, end=" ")
+    print()
