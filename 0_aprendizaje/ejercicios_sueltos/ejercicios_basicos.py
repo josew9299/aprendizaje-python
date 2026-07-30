@@ -7,10 +7,13 @@ def mayor_edad(edad):
         return False, "Es imposible vivir tanto"
     if edad < 0:
         return False, "Aún ho ha nacido o solo tiene meses de edad"
+    
     else:
         return False, "Por favor introduce una edad válida"
     
 
+
+print(mayor_edad("m"))
 
 #La serie de fibonacci
 
@@ -23,8 +26,9 @@ Imprime este patrón por pantalla
 4 4 4 4
 5 5 5 5 5
 """
-
+"""
 for num in range(6):#Filas
     for i in range(num): #Columnas
         print(num, end=" ")
     print()
+"""
